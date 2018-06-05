@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Цитаты разработчиков в PropellerAds</title>
+    <style>
+        html, body {
+            height:100%;
+            font-family: Gill Sans Extrabold, sans-serif;
+        }
+
+        .content {
+            margin: -250px auto 0 auto;
+            position: relative;
+            text-align: center;
+            top: 50%;
+            width: 1000px;
+            height: 500px;
+        }
+
+        .content h2 {
+            font-size: 50px;
+        }
+        .content .copyright {
+            font-size: 20px;
+            color: darkgray;
+            text-align: right;
+            margin: 0 50px;
+            display: block;
+            text-decoration: none;
+        }
+        .content .copyright:hover {
+            text-decoration: underline;
+        }
+        .content .logo {
+            width: 277px;
+            height: 80px;
+            margin: 50px auto;
+            position: relative;
+            text-align: center;
+            background-image: url(logo.png);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="logo"></div>
+    <h2></h2>
+    <a class="copyright" href="" target="_blank"></a>
+</div>
+<script>
+    const index = parseInt(Math.random() * database.length, 10);
+    const obj = database[index];
+
+    $('.content h2').text(obj.text);
+    $('.content .copyright').prop('href', obj.url).text('(c) ' + obj.name);
+
+</script>
+</body>
+</html>
