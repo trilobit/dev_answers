@@ -8,5 +8,10 @@ const database = [
       'text': 'Это какая-то смесь функционального программирования и говнокода!',
       'url': 'https://github.com/enemis',
       'name': 'Andrey S.',
-  }
+  },
+  {
+      'text': 'Передавай ему пламенный пиздец!',
+      'url': 'https://github.com/trilobit',
+      'name': 'Alexander S.',
+  },
 ];

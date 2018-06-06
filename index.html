@@ -51,7 +51,13 @@
     <a class="copyright" href="" target="_blank"></a>
 </div>
 <script>
-    const index = parseInt(Math.random() * database.length, 10);
+    let index;
+
+    if(window.location.hash) {
+        index = parseInt(window.location.hash.substr(1), 10);
+    } else {
+        index = parseInt(Math.random() * database.length, 10);
+    }
     const obj = database[index];
 
     $('.content h2').text(obj.text);
