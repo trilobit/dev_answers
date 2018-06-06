@@ -14,4 +14,9 @@ const database = [
       'url': 'https://github.com/trilobit',
       'name': 'Alexander S.',
   },
+  {
+      'text': 'Я добавил кусочек реального кода...',
+      'url': 'https://github.com/dtuchs',
+      'name': 'Dmitrii T.',
+  },
 ];
