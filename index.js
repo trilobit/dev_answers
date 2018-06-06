@@ -19,4 +19,9 @@ const database = [
       'url': 'https://github.com/dtuchs',
       'name': 'Dmitrii T.',
   },
+  {
+      'text': 'Не смотри на меня так, как будто я что-то знаю...',
+      'url': 'https://github.com/dtuchs',
+      'name': 'Andrey S.',
+  },
 ];
