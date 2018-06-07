@@ -21,7 +21,12 @@ const database = [
   },
   {
       'text': 'Не смотри на меня так, как будто я что-то знаю...',
-      'url': 'https://github.com/dtuchs',
+      'url': 'https://github.com/enemis',
+      'name': 'Andrey S.',
+  },
+  {
+      'text': 'Я посмотрел, но лайк не поставлю!',
+      'url': 'https://github.com/enemis',
       'name': 'Andrey S.',
   },
 ];

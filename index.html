@@ -12,21 +12,23 @@
         .content {
             margin: -250px auto 0 auto;
             position: relative;
-            text-align: center;
             top: 50%;
             width: 1000px;
             height: 500px;
+            cursor: pointer;
+            text-align: right;
         }
 
         .content h2 {
             font-size: 50px;
+            text-align: center;
         }
         .content .copyright {
             font-size: 20px;
             color: darkgray;
             text-align: right;
-            margin: 0 50px;
-            display: block;
+            margin-right: 50px;
+            display: inline-block;
             text-decoration: none;
         }
         .content .copyright:hover {
@@ -51,18 +53,29 @@
     <a class="copyright" href="" target="_blank"></a>
 </div>
 <script>
-    let index;
-
-    if(window.location.hash) {
-        index = parseInt(window.location.hash.substr(1), 10);
-    } else {
-        index = parseInt(Math.random() * database.length, 10);
+    function updateAnswer(index) {
+        const obj = database[index];
+        $('.content h2').text(obj.text);
+        $('.content .copyright').prop('href', obj.url).text('(c) ' + obj.name);
     }
-    const obj = database[index];
 
-    $('.content h2').text(obj.text);
-    $('.content .copyright').prop('href', obj.url).text('(c) ' + obj.name);
+    function getIndex(isRandom = true) {
+        let index;
 
+        if(!window.location.hash || isRandom) {
+            index = parseInt(Math.random() * database.length, 10);
+        } else {
+            index = parseInt(window.location.hash.substr(1), 10);
+        }
+
+        return index;
+    }
+
+    $('.content').on('click', function () {
+        updateAnswer(getIndex());
+    });
+
+    updateAnswer(getIndex(false));
 </script>
 </body>
 </html>
