@@ -29,4 +29,9 @@ const database = [
       'url': 'https://github.com/enemis',
       'name': 'Andrey S.',
   },
+  {
+      'text': 'Наконец-то стало похоже на нормальный код!',
+      'url': 'https://github.com/dtuchs',
+      'name': 'Dmitrii T.',
+  },
 ];
