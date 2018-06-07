@@ -1,34 +1,23 @@
-const database = [
-  {
-      'text': 'То что мне понравилось, я лайкнул!',
-      'name': 'Andrey S.',
-  },
-  {
-      'text': 'Это какая-то смесь функционального программирования и говнокода!',
-      'name': 'Andrey S.',
-  },
-  {
-      'text': 'Передавай ему пламенный пиздец!',
-      'name': 'Alexander S.',
-  },
-  {
-      'text': 'Я добавил кусочек реального кода...',
-      'name': 'Dmitrii T.',
-  },
-  {
-      'text': 'Не смотри на меня так, как будто я что-то знаю...',
-      'name': 'Andrey S.',
-  },
-  {
-      'text': 'Я посмотрел, но лайк не поставлю!',
-      'name': 'Andrey S.',
-  },
-  {
-      'text': 'Наконец-то стало похоже на нормальный код!',
-      'name': 'Dmitrii T.',
-  },
-  {
-      'text': 'Короче!... А ладно похер...',
-      'name': 'Dmitrii T.',
-  },
-];
+function updateAnswer(index) {
+    const obj = database[index];
+    $('.content h2').text(obj.text);
+    $('.content .copyright').text('(c) ' + obj.name);
+}
+
+function getIndex(isRandom = true) {
+    let index;
+
+    if(!window.location.hash || isRandom) {
+        index = parseInt(Math.random() * database.length, 10);
+    } else {
+        index = parseInt(window.location.hash.substr(1), 10);
+    }
+
+    return index;
+}
+
+$('.overlay').on('click', () => {
+    updateAnswer(getIndex());
+});
+
+updateAnswer(getIndex(false));

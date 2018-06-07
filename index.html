@@ -4,25 +4,48 @@
     <meta charset="UTF-8">
     <title>Цитаты разработчиков в PropellerAds</title>
     <style>
-        html, body {
-            height:100%;
+        html,
+        body {
+            height: 100%;
             font-family: Gill Sans Extrabold, sans-serif;
+            margin: 0;
+        }
+
+        .page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .overlay:hover {
+            background-color: rgba(0, 0, 0, 0.05);
         }
 
         .content {
-            margin: -250px auto 0 auto;
+            padding: 40px 60px;
             position: relative;
-            top: 50%;
-            width: 1000px;
-            height: 500px;
-            cursor: pointer;
+            max-width: 1000px;
+            max-height: 500px;
             text-align: right;
+            background-color: white;
+            border-radius: 7px;
+            box-shadow: 0 0 20px 1px #eaeaea;
         }
 
         .content h2 {
             font-size: 50px;
             text-align: center;
         }
+
         .content .copyright {
             font-size: 20px;
             color: darkgray;
@@ -30,6 +53,7 @@
             margin-right: 50px;
             display: inline-block;
         }
+
         .content .logo {
             width: 277px;
             height: 80px;
@@ -40,38 +64,16 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="index.js"></script>
 </head>
-<body>
-<div class="content">
-    <div class="logo"></div>
-    <h2></h2>
-    <div class="copyright"></div>
-</div>
-<script>
-    function updateAnswer(index) {
-        const obj = database[index];
-        $('.content h2').text(obj.text);
-        $('.content .copyright').text('(c) ' + obj.name);
-    }
+<body class="page">
+    <div class="overlay"></div>
 
-    function getIndex(isRandom = true) {
-        let index;
-
-        if(!window.location.hash || isRandom) {
-            index = parseInt(Math.random() * database.length, 10);
-        } else {
-            index = parseInt(window.location.hash.substr(1), 10);
-        }
-
-        return index;
-    }
-
-    $('.content').on('click', function () {
-        updateAnswer(getIndex());
-    });
-
-    updateAnswer(getIndex(false));
-</script>
+    <div class="content">
+        <div class="logo"></div>
+        <h2></h2>
+        <div class="copyright"></div>
+    </div>
+    <script src="answerBase.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
