@@ -29,10 +29,6 @@
             text-align: right;
             margin-right: 50px;
             display: inline-block;
-            text-decoration: none;
-        }
-        .content .copyright:hover {
-            text-decoration: underline;
         }
         .content .logo {
             width: 277px;
@@ -50,13 +46,13 @@
 <div class="content">
     <div class="logo"></div>
     <h2></h2>
-    <a class="copyright" href="" target="_blank"></a>
+    <div class="copyright"></div>
 </div>
 <script>
     function updateAnswer(index) {
         const obj = database[index];
         $('.content h2').text(obj.text);
-        $('.content .copyright').prop('href', obj.url).text('(c) ' + obj.name);
+        $('.content .copyright').text('(c) ' + obj.name);
     }
 
     function getIndex(isRandom = true) {
