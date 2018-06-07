@@ -1,0 +1,22 @@
+{
+  "name": "dev_answers",
+  "version": "1.0.0",
+  "description": "Answers of Great developer ever",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trilobit/dev_answers.git"
+  },
+  "keywords": [
+    "devanswers"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trilobit/dev_answers/issues"
+  },
+  "homepage": "https://github.com/trilobit/dev_answers#readme"
+}
