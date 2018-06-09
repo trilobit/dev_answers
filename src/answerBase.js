@@ -1,4 +1,4 @@
-const database = [
+export default [
   {
       'text': 'То что мне понравилось, я лайкнул!',
       'name': 'Andrey S.',
