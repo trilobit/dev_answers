@@ -1,7 +1,7 @@
 function updateAnswer(index) {
     const obj = database[index];
-    $('.content h2').text(obj.text);
-    $('.content .copyright').text('(c) ' + obj.name);
+    $('.content h2').html(obj.text);
+    $('.content .copyright').html('(c) ' + obj.name);
 }
 
 function getIndex(isRandom = true) {
