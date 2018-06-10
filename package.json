@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/trilobit/dev_answers/issues"
   },
-  "homepage": "https://github.com/trilobit/dev_answers#readme"
+  "homepage": "https://propeller-developers.netlify.com"
 }
