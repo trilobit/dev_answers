@@ -12,18 +12,6 @@ class App extends Component{
         };
     }
 
-    getIndex(isRandom = true) {
-        let index;
-
-        if(!window.location.hash || isRandom) {
-            index = parseInt(Math.random() * answers.length, 10);
-        } else {
-            index = parseInt(window.location.hash.substr(1), 10);
-        }
-
-        return index;
-    }
-
     render() {
         return (
             <div>
@@ -37,8 +25,19 @@ class App extends Component{
         this.setState({
             index: this.getIndex()
         });
-    }
+    };
 
+    getIndex(isRandom = true) {
+        let index;
+
+        if(!window.location.hash || isRandom) {
+            index = parseInt(Math.random() * answers.length, 10);
+        } else {
+            index = parseInt(window.location.hash.substr(1), 10);
+        }
+
+        return index;
+    }
 }
 
 export default App;
