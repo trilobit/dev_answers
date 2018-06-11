@@ -1,12 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Overlay extends Component{
-    render() {
-        const {clickHandler} = this.props;
-        return (
-            <div className="overlay" onClick={ clickHandler } />
-        );
-    }
-}
+const Overlay = ({clickHandler}) => (
+    <div className="overlay"
+         onClick={clickHandler}
+    />
+);
 
 export default Overlay;

@@ -12,15 +12,6 @@ class App extends Component{
         };
     }
 
-    render() {
-        return (
-            <div>
-                <Overlay clickHandler = { this.handleClick } />
-                <Answer answer = { answers[this.state.index] } />
-            </div>
-        );
-    }
-
     handleClick = () => {
         this.setState({
             index: this.getIndex()
@@ -37,6 +28,15 @@ class App extends Component{
         }
 
         return index;
+    }
+
+    render() {
+        return (
+            <div>
+                <Overlay clickHandler = { this.handleClick } />
+                <Answer answer = { answers[this.state.index] } />
+            </div>
+        );
     }
 }
 
