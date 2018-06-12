@@ -5,22 +5,15 @@
     <title>Цитаты разработчиков в PropellerAds</title>
     <style>
         html,
-        body {
+        body,
+        #app {
             height: 100%;
             font-family: Gill Sans Extrabold, sans-serif;
             margin: 0;
         }
 
-        .page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            margin: 0;
-        }
-
-        .overlay {
-            position: absolute;
+        .Overlay {
+            position: fixed;
             left: 0;
             top: 0;
             right: 0;
@@ -28,27 +21,38 @@
             cursor: pointer;
         }
 
-        .overlay:hover {
+        .Overlay:hover {
             background-color: rgba(0, 0, 0, 0.05);
         }
 
-        .content {
+        .Answer {
             padding: 40px 60px;
             position: relative;
             max-width: 1000px;
             max-height: 500px;
             text-align: right;
-            background-color: white;
             border-radius: 7px;
-            box-shadow: 0 0 20px 1px #eaeaea;
         }
 
-        .content h2 {
+        .Answer_light {
+            box-shadow: 0 0 20px 1px #eaeaea;
+            background-color: white;
+        }
+
+        .Answer_dark {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .Answer_dark h2 {
+            color: white;
+        }
+
+        .Answer h2 {
             font-size: 50px;
             text-align: center;
         }
 
-        .content .copyright {
+        .Answer__copyright {
             font-size: 20px;
             color: darkgray;
             text-align: right;
@@ -56,7 +60,7 @@
             display: inline-block;
         }
 
-        .content .logo {
+        .Answer__logo {
             width: 277px;
             height: 80px;
             margin: 50px auto;
@@ -64,9 +68,45 @@
             text-align: center;
             background-image: url(logo.png);
         }
+
+        .App {
+            transition: background .2s linear;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 0;
+        }
+
+        .App_dark {
+            background-color: #444;
+        }
+
+        .App__actions {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .SwitchTheme {
+            width: 40px;
+            height: 40px;
+            border: 0;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .SwitchTheme_dark {
+            background-color: white;
+        }
+
+        .SwitchTheme_light {
+            background-color: #444;
+        }
     </style>
 </head>
 <body>
-    <div class="page" id="container"></div>
+    <div id="app"></div>
 </body>
 </html>

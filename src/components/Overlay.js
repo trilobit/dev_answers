@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Overlay = ({clickHandler}) => (
-    <div className="overlay"
+    <div className="Overlay"
          onClick={clickHandler}
     />
 );
