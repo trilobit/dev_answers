@@ -10,15 +10,12 @@ const THEME_KEY = 'theme';
 class App extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            index: this.getIndex(false),
-        };
     }
 
     componentWillMount() {
         this.setState({
             theme: window.localStorage.getItem(THEME_KEY) || THEMES.light,
+            index: this.getIndex(false)
         });
     }
 
