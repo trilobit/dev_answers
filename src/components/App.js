@@ -8,10 +8,6 @@ import SwitchTheme from './SwitchTheme';
 const THEME_KEY = 'theme';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentWillMount() {
         this.setState({
             theme: window.localStorage.getItem(THEME_KEY) || THEMES.light,
