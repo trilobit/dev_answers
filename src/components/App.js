@@ -4,8 +4,16 @@ import THEMES from '../themes';
 import Overlay from './Overlay';
 import Answer from './Answer';
 import SwitchTheme from './SwitchTheme';
+import injectSheet from 'react-jss';
 
 const THEME_KEY = 'theme';
+const styles = {
+    actions: {
+        position: 'absolute',
+        right: 10,
+        bottom: 10,
+    }
+};
 
 class App extends Component {
     componentWillMount() {
@@ -44,6 +52,7 @@ class App extends Component {
     }
 
     render() {
+        const classes = this.props.classes;
         return (
             <div className={`App App_${this.state.theme}`}>
                 <Overlay clickHandler={this.handleOverlayClick}/>
@@ -51,7 +60,7 @@ class App extends Component {
                         theme={this.state.theme}
                 />
 
-                <div className="App__actions">
+                <div className={classes.actions}>
                     <SwitchTheme
                         clickHandler={this.handleSwitchThemeClick}
                         theme={this.state.theme}
@@ -62,4 +71,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default injectSheet(styles)(App);
