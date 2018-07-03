@@ -65,7 +65,7 @@ class App extends Component {
     render() {
         const classes = this.props.classes;
         return (
-            <div className={`${classes.App} ${this.state.theme === THEMES.dark && classes.dark}`}>
+            <div className={`${classes.App} ${(this.state.theme === THEMES.dark) && classes.dark}`}>
                 <Overlay clickHandler={this.handleOverlayClick}/>
                 <Answer answer={answers[this.state.index]}
                         light={this.state.theme === THEMES.light}
