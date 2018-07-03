@@ -10,13 +10,21 @@ const styles = {
         borderRadius: '50%',
         outline: 'none',
         cursor: 'pointer',
+    },
+    light: {
+        backgroundColor: '#444',
+        color: 'white',
+    },
+    dark: {
+        backgroundColor: 'white',
+        color: 'black',
     }
 };
 
-const SwitchTheme = ({classes, clickHandler, theme}) => (
-    <button className={`${classes.SwitchTheme} SwitchTheme_${theme}`}
+const SwitchTheme = ({classes, clickHandler, light, dark}) => (
+    <button className={`${classes.SwitchTheme} ${light && classes.light} ${dark && classes.dark}`}
             onClick={clickHandler}>
-        <i className="material-icons">{theme === THEMES.dark ? 'brightness_1' : 'brightness_3'}</i>
+        <i className="material-icons">{dark === THEMES.dark ? 'brightness_1' : 'brightness_3'}</i>
     </button>
 );
 

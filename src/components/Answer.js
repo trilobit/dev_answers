@@ -29,11 +29,25 @@ const styles = {
         textAlign: 'right',
         marginRight: 50,
         display: 'inline-block',
+    },
+    '& h2': {
+        fontSize: 50,
+        textAlign: 'center',
+    },
+    light: {
+        boxShadow: '0 0 20px 1px #eaeaea',
+        backgroundColor: 'white',
+    },
+    dark: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        '& h2': {
+            color: 'white',
+        }
     }
 };
 
-const Answer = ({classes, answer, theme}) => (
-    <div className={`${classes.Answer} Answer_${theme}`}>
+const Answer = ({classes, answer, light, dark}) => (
+    <div className={`${classes.Answer} ${light && classes.light} ${dark && classes.dark}`}>
         <div className={classes.logo}/>
         <h2 dangerouslySetInnerHTML={{__html: answer.text}}/>
         <div className={classes.copyright}>{answer.name}</div>
