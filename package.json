@@ -5,12 +5,12 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-jss": "^8.6.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-jss": "^10.4.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,5 +29,17 @@
   "bugs": {
     "url": "https://github.com/trilobit/dev_answers/issues"
   },
-  "homepage": "https://propeller-developers.netlify.com"
+  "homepage": "https://propeller-developers.netlify.com",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
