@@ -1,4 +1,10 @@
-export default [
+
+export type TAnswer = {
+    text: string;
+    name: string;
+}
+
+export const ANSWERS: TAnswer[] = [
     {
         'text': 'То что мне понравилось, я лайкнул!',
         'name': 'Andrey S.',
